@@ -328,6 +328,7 @@ def run_download_job(job_id: str, url: str, format_type: str, quality: str = Non
 
 def broadcast_state():
     """Broadcast current state to all connected clients"""
+    global clients
     message = json.dumps(current_state)
     disconnected = set()
     for client in clients:
